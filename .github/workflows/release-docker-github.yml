@@ -51,7 +51,7 @@ jobs:
             TAG="${GITHUB_REF##refs/tags/}"
           fi
           echo "RELEASE_TAG=$TAG" >> $GITHUB_ENV
-          echo "VERSION=$TAG" >> $GITHUB_OUTPU
+          echo "VERSION=$TAG" >> $GITHUB_OUTPUT
 
       - name: Update package.json version
         run: |
