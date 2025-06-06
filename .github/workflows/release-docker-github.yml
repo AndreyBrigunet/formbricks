@@ -45,10 +45,13 @@ jobs:
       - name: Get Release Tag
         id: extract_release_tag
         run: |
-          TAG=${{ github.ref }}
-          TAG=${TAG#refs/tags/v}
+          if [ -n "${{ github.event.inputs.version }}" ]; then
+            TAG="${{ github.event.inputs.version }}"
+          else
+            TAG="${GITHUB_REF##refs/tags/}"
+          fi
           echo "RELEASE_TAG=$TAG" >> $GITHUB_ENV
-          echo "VERSION=$TAG" >> $GITHUB_OUTPUT
+          echo "VERSION=$TAG" >> $GITHUB_OUTPU
 
       - name: Update package.json version
         run: |
