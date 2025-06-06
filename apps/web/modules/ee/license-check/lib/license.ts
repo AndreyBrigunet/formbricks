@@ -100,17 +100,17 @@ export const getCacheKeys = () => {
 
 // Default features
 const DEFAULT_FEATURES: TEnterpriseLicenseFeatures = {
-  isMultiOrgEnabled: false,
-  projects: 3,
-  twoFactorAuth: false,
-  sso: false,
-  whitelabel: false,
-  removeBranding: false,
-  contacts: false,
-  ai: false,
-  saml: false,
-  spamProtection: false,
-  auditLogs: false,
+  isMultiOrgEnabled: true,
+  projects: 30,
+  twoFactorAuth: true,
+  sso: true,
+  whitelabel: true,
+  removeBranding: true,
+  contacts: true,
+  ai: true,
+  saml: true,
+  spamProtection: true,
+  auditLogs: true,
 };
 
 // Helper functions
