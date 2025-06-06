@@ -13,22 +13,22 @@ jobs:
     uses: ./.github/workflows/release-docker-github.yml
     secrets: inherit
 
-  helm-chart-release:
-    name: Release Helm Chart
-    uses: ./.github/workflows/release-helm-chart.yml
-    secrets: inherit
-    needs:
-      - docker-build
-    with:
-      VERSION: ${{ needs.docker-build.outputs.VERSION }}
+  # helm-chart-release:
+  #   name: Release Helm Chart
+  #   uses: ./.github/workflows/release-helm-chart.yml
+  #   secrets: inherit
+  #   needs:
+  #     - docker-build
+  #   with:
+  #     VERSION: ${{ needs.docker-build.outputs.VERSION }}
 
-  deploy-formbricks-cloud:
-    name: Deploy Helm Chart to Formbricks Cloud
-    secrets: inherit
-    uses: ./.github/workflows/deploy-formbricks-cloud.yml
-    needs:
-      - docker-build
-      - helm-chart-release
-    with:
-      VERSION: v${{ needs.docker-build.outputs.VERSION }}
-      ENVIRONMENT: "prod"
+  # deploy-formbricks-cloud:
+  #   name: Deploy Helm Chart to Formbricks Cloud
+  #   secrets: inherit
+  #   uses: ./.github/workflows/deploy-formbricks-cloud.yml
+  #   needs:
+  #     - docker-build
+  #     - helm-chart-release
+  #   with:
+  #     VERSION: v${{ needs.docker-build.outputs.VERSION }}
+  #     ENVIRONMENT: "prod"
