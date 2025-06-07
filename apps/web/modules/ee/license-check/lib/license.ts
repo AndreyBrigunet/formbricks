@@ -23,7 +23,7 @@ const CONFIG = {
     RETRY_DELAY_MS: 1000,
   },
   API: {
-    ENDPOINT: "https://ee.formbricks.com/api/licenses/check",
+    ENDPOINT: "https://api.easy4live.com/api/licenses/check",
     TIMEOUT_MS: 5000,
   },
 } as const;
